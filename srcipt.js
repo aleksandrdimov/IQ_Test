@@ -25,16 +25,6 @@ const testArray = [
     },
   },
   {
-    title: "Выберите лишнее:",
-    inputs: {
-      item1: "Дом",
-      item2: "Шалаш",
-      item3: "Бунгало",
-      item4: "Скамейка",
-      item5: "Хижина",
-    },
-  },
-  {
     title: "Продолжите числовой ряд: 18 20 24 32",
     inputs: {
       item1: "62",
@@ -111,18 +101,6 @@ const testArray = [
       item1: "Оно остроконечное",
       item2: "Оно устойчиво",
       item3: "Оно-находится в состоянии равновесия",
-    },
-  },
-  {
-    title: "Вставьте подходящее число",
-    image: "assets/images/image3.png",
-    smallBlocks: {
-      item1: "34",
-      item2: "36",
-      item3: "53",
-      item4: "44",
-      item5: "66",
-      item6: "42",
     },
   },
   {

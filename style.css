@@ -35,7 +35,7 @@ img {
   display: flex;
   align-items: center;
   padding: 15px;
-  background-color: #181818;
+  background-color: rgba(24, 24, 24, 0.5);
 }
 
 .header__box {
@@ -518,10 +518,16 @@ img {
   height: 40px;
   margin: auto;
   border-radius: 20px;
+  border: 1px solid transparent;
   background-color: #dadada;
   color: #8e8e8e;
   text-transform: uppercase;
   pointer-events: none;
+}
+
+.button__next:hover,
+.label:hover {
+  border: 1px solid white;
 }
 
 .label {
@@ -529,13 +535,14 @@ img {
   width: 100vw;
   display: grid;
   grid-template-columns: 20px auto;
-  gap: 39px;
+  gap: 20px;
   font-weight: 400;
   font-size: 18px;
   line-height: 22px;
   padding: 14px 35px;
   margin-bottom: 8px;
   color: #ffffff;
+  border: 1px solid transparent;
   background-color: rgba(242, 243, 243, 0.15);
 }
 
@@ -562,6 +569,10 @@ img {
   border: 6px solid #ffc700;
 }
 
+.test__big-block:hover {
+  border: 6px solid white;
+}
+
 .test__block {
   cursor: pointer;
   width: 40px;
@@ -580,6 +591,10 @@ img {
 
 .test__block.js-active {
   border: 4px solid #ffc700;
+}
+
+.test__block:hover {
+  border: 4px solid black;
 }
 
 .test__load {
@@ -718,7 +733,12 @@ img {
   align-items: center;
   margin: auto;
   border-radius: 6px;
+  border: 1px solid transparent;
   background-color: #eb1b00;
+}
+
+.test__call-box:hover {
+  border: 1px solid white;
 }
 
 .test__call-text {
@@ -768,10 +788,6 @@ img {
 }
 
 @media (min-width: 768px) {
-  .header__container {
-    background-color: transparent;
-  }
-
   .burger {
     display: none;
   }
@@ -870,7 +886,7 @@ img {
   }
 
   .test__title {
-    max-width: 480px;
+    max-width: 550px;
     text-align: start;
     padding: 0;
     margin-bottom: 20px;
@@ -883,7 +899,7 @@ img {
   }
 
   .label {
-    width: 480px;
+    width: 500px;
     margin-bottom: 8px;
     border-radius: 8px;
   }
