@@ -60,7 +60,8 @@ const testArray = [
     },
   },
   {
-    title: "Выберите цвет, который сейчас найболее вам приятен:",
+    title:
+      "Отдохните пару секунд, еще раз Выберите цвет, который сейчас наиболее Вам приятен:",
     bigBlocks: {
       item1: "grey",
       item2: "aqua",
@@ -80,7 +81,7 @@ const testArray = [
       item2: "Лондон",
       item3: "Париж",
       item4: "Нью-Йорк",
-      item5: "Москва",
+      item5: "Будапешт",
       item6: "Оттава",
     },
   },
@@ -180,6 +181,7 @@ const buttonStartTest = () => {
   const headerTest = document.querySelector(".header__test");
   const body = document.querySelector(".main");
   const testBody = document.querySelector(".test");
+  const navList = document.querySelector(".nav__list");
 
   buttonsTest.forEach((el) => {
     el.addEventListener("click", () => {
@@ -187,8 +189,10 @@ const buttonStartTest = () => {
       headerLogo.classList.add("js-active");
       headerTest.classList.add("js-active");
       testBody.classList.add("js-active");
+      navList.classList.add("js-active");
       headerBox.style.padding = "0 15px";
       renderTestItem();
+      clickNavItem();
     });
   });
 };
@@ -416,13 +420,11 @@ const createTimer = () => {
       if (minute.textContent < 10)
         minute.textContent = `0${Math.floor(t / 60)}`;
 
-      // second
       second.textContent = `${Math.floor(t % 60)}`;
       if (second.textContent <= 0) second.textContent = `00`;
       if (second.textContent < 10)
         second.textContent = `0${Math.floor(t % 60)}`;
 
-      // end
       if (t <= 0) {
         clearInterval(timeOut);
         timer.classList.add("js-finish");
@@ -443,9 +445,11 @@ const getData = () => {
 getData();
 
 const renderPostItem = (post) => {
-  const parentBlock = document.querySelector(".test");
+  const parentBlock = document.querySelector(".test__finish");
+  const flexContainer = document.createElement("div");
+  flexContainer.style = `display:flex;justify-content:center;align-items:start;margin-top:20px`;
   const container = document.createElement("div");
-  container.style = `width:200px;color:grey;margin:auto`;
+  container.style = `width:200px;text-align:start;color:white;`;
 
   container.innerHTML = `<p>Взято из API swapi:</p>
   <p>Имя: ${postData.name}</p>
@@ -456,17 +460,19 @@ const renderPostItem = (post) => {
   <p>Цвет кожи: ${postData.skin_color}</p>
   <p>Цвет глаз: ${postData.eye_color}</p>`;
 
-  parentBlock.appendChild(container);
-  renderResultTest(parentBlock);
+  parentBlock.appendChild(flexContainer);
+  flexContainer.appendChild(container);
+  renderResultTest(flexContainer);
 };
 
 const renderResultTest = (parent) => {
   const resultBlock = document.createElement("div");
-  resultBlock.style = `width:200px;margin:auto;margin-top:20px;color:grey`;
+  resultBlock.style = `width:200px;text-align:start;color:white`;
   resultBlock.innerText = "Ответы теста:";
+
   for (let value of Object.entries(result)) {
     const itemResult = document.createElement("p");
-    itemResult.style.color = "grey";
+    itemResult.style.color = "white";
     itemResult.innerText = value[0] + "." + value[1];
     resultBlock.appendChild(itemResult);
   }
@@ -476,10 +482,10 @@ const renderResultTest = (parent) => {
 
 const clickPhoneIcon = () => {
   const phone = document.querySelector(".test__call-box");
-  const finish = document.querySelector(".test__finish");
 
   phone.addEventListener("click", () => {
-    finish.classList.remove("js-active");
+    document.querySelector(".test").classList.add("js-adaptive-height");
     renderPostItem();
+    phone.style.pointerEvents = "none";
   });
 };

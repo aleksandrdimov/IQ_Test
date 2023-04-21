@@ -13,17 +13,7 @@
         <div class="burger">
           <span></span>
         </div>
-        <div class="header__box">
-          <img
-            src="assets/images/rain_bk3.png"
-            alt="logo"
-            class="header__logo"
-          />
-          <h3 class="header__title">
-            <span class="header__test">Тест на определение IQ</span
-            ><span class="header__finish">Готово!</span>
-          </h3>
-        </div>
+
         <nav class="nav">
           <ul class="nav__list">
             <svg
@@ -52,6 +42,17 @@
             </li>
           </ul>
         </nav>
+        <div class="header__box">
+          <img
+            src="assets/images/rain_bk3.png"
+            alt="logo"
+            class="header__logo"
+          />
+          <h3 class="header__title">
+            <span class="header__test">Тест на определение IQ</span
+            ><span class="header__finish">Готово!</span>
+          </h3>
+        </div>
       </div>
     </header>
 
@@ -66,7 +67,7 @@
             </h3>
             <img
               class="banner__logo"
-              src="assets/images/rain_bk3.png"
+              src="assets/images/logo_big.png"
               alt="logo"
             />
             <button class="button__test js-start">Пройти тест</button>
@@ -143,8 +144,8 @@
         <div class="about__container">
           <p class="about__container-text">
             Также по результатам теста <br /><span> вы получите</span> подробные
-            <br /><span>советы</span> по определению наиболее перспективной<span>
-              для вашего <br />типа интеллекта сферы деятельности,</span
+            <span>советы</span> по определению наиболее перспективной<span>
+              для вашего типа интеллекта сферы деятельности,</span
             ><br />
             которая принесет вам скорейший финансовый результат.
           </p>
@@ -195,16 +196,20 @@
           </svg>
           <span>2019</span>
         </div>
-        <img
-          class="time__lightning-up"
-          src="assets/images/lightning_up.png"
-          alt="lightning"
-        />
-        <img
-          class="time__lightning-down"
-          src="assets/images/lightning_down.png"
-          alt="lightning"
-        />
+        <picture class="time__lightning-up">
+          <source
+            srcset="assets/images/lightning_right_desktop.png"
+            media="(min-width:1024px)"
+          />
+          <img src="assets/images/lightning_up.png" alt="lightning" />
+        </picture>
+        <picture class="time__lightning-down">
+          <source
+            srcset="assets/images/lightning_left_desktop.png"
+            media="(min-width:1024px)"
+          />
+          <img src="assets/images/lightning_down.png" alt="lightning" />
+        </picture>
       </section>
     </main>
 
@@ -281,16 +286,20 @@
           </svg>
           <p class="test__call-text">Позвонить и прослушать результат</p>
         </div>
-        <img
-          class="test__finish-left"
-          src="assets/images/lightning_finish_left.png"
-          alt="light"
-        />
-        <img
-          class="test__finish-right"
-          src="assets/images/lightning_finish_right.png"
-          alt="light"
-        />
+        <picture class="test__finish-left">
+          <source
+            srcset="assets/images/lightning_finish_left_desktop.png"
+            media="(min-width:1024px)"
+          />
+          <img src="assets/images/lightning_finish_left.png" alt="light" />
+        </picture>
+        <picture class="test__finish-right">
+          <source
+            srcset="assets/images/lightning_finish_right_desktop.png"
+            media="(min-width:1024px)"
+          />
+          <img src="assets/images/lightning_finish_right.png" alt="light" />
+        </picture>
       </div>
     </section>
 
